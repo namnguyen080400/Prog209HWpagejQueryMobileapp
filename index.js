@@ -6,11 +6,11 @@ let ContactObject = function (pName, pEmail, pPhoneNumber) {
     this.phoneNumber = pPhoneNumber;
 }
 
-contactArray.push ( new ContactObject("Eat Lunch", "Home", 1)  );
+/* contactArray.push ( new ContactObject("Eat Lunch", "Home", 1)  );
 contactArray.push ( new ContactObject("Do 209 HW", "School", 2)  );
-contactArray.push ( new ContactObject("Watch Dune", "Home", 3)  );
+contactArray.push ( new ContactObject("Watch Dune", "Home", 3)  ); */
 
-let selectedType = "";
+/* let selectedType = ""; */
 
 // code runs immediately
 //================================================================
@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     createList();
 
     document.getElementById("submitContact").addEventListener("click", function () {
-        contactArray.push ( new ContactObject(document.getElementById("name").value, selectedType,
-        document.getElementById("email").value, document.getElementById("phone").value) );
+        contactArray.push ( new ContactObject(document.getElementById("name").value,
+            document.getElementById("email").value, document.getElementById("phone").value) );
         
         document.getElementById("name").value = "";
         document.getElementById("email").value = "";
@@ -44,7 +44,7 @@ function createList() {
     contactArray.forEach(function (element,) {   // use handy array forEach method
         var li = document.createElement('li');
           // added data-role="listview" to the ul in the html
-        li.innerHTML = element.priority + ":  " + element.type + "   " + element.data;
+        li.innerHTML = element.name + ":  " + element.email + "   " + element.phoneNumber;
         myul.appendChild(li);
     });
 };
